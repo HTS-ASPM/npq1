@@ -97,7 +97,6 @@ Promise.resolve()
     }
 
     if (result && result.countErrors > 0) {
-      // eslint-disable-next-line no-console
       console.log()
       return cliPrompt.prompt({
         name: 'install',
@@ -106,7 +105,6 @@ Promise.resolve()
       })
     } else {
       if (result && result.countWarnings > 0) {
-        // eslint-disable-next-line no-console
         console.log()
         return cliPrompt.autoContinue({
           name: 'install',
@@ -119,7 +117,11 @@ Promise.resolve()
     return { install: true }
   })
   .then((status) => {
-    if (status && status.hasOwnProperty('install') && status.install === true) {
+    if (
+      status &&
+      Object.prototype.hasOwnProperty.call(status, 'install') &&
+      status.install === true
+    ) {
       pkgMgr.process(cliArgs.packageManager)
     }
   })

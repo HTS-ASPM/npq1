@@ -1,3 +1,5 @@
+'use strict'
+
 const RepoMarshall = require('../lib/marshalls/repo.marshall')
 
 const testMarshall = new RepoMarshall({

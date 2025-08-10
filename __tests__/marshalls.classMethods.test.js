@@ -1,3 +1,5 @@
+'use strict'
+
 beforeEach(() => {
   jest.resetModules()
 })

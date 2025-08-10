@@ -1,3 +1,5 @@
+'use strict'
+
 const { prompt } = require('../lib/helpers/cliPrompt')
 const readline = require('node:readline/promises')
 

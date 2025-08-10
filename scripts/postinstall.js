@@ -1,3 +1,5 @@
+'use strict'
+
 const fs = require('fs')
 const { styleText } = require('node:util')
 const semver = require('semver')

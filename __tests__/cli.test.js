@@ -1,5 +1,7 @@
 // __tests__/cli.test.js
 
+'use strict'
+
 // Mock dependencies. These are hoisted by Jest.
 jest.mock('../lib/cli', () => ({
   CliParser: {

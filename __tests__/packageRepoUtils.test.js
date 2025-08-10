@@ -1,3 +1,5 @@
+'use strict'
+
 const PackageRepoUtils = require('../lib/helpers/packageRepoUtils')
 
 global.fetch = jest.fn().mockImplementation(() =>

@@ -1,3 +1,5 @@
+'use strict'
+
 const TestMarshall = require('./__fixtures__/test.marshall')
 const TEST_MARSHALL_NAME = 'test.marshall'
 const BaseMarshall = require('../lib/marshalls/baseMarshall')

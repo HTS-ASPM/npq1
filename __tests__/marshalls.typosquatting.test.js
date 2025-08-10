@@ -1,3 +1,5 @@
+'use strict'
+
 const TyposquattingMarshall = require('../lib/marshalls/typosquatting.marshall')
 
 describe('Typosquatting Marshall', () => {

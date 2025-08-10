@@ -1,3 +1,5 @@
+'use strict'
+
 jest.mock('pacote', () => {
   return {
     // manifest method should be a promise that resolves to a value:
@@ -69,7 +71,6 @@ describe('Signature test suites', () => {
     await testMarshall.validate(pkg)
 
     // Assert that the fetch method is called with the correct URL
-    // eslint-disable-next-line no-undef
     expect(fetch).toHaveBeenCalledWith('https://registry.npmjs.org/-/npm/v1/keys')
 
     // Assert that the pacote.manifest method is called with the correct arguments

@@ -1,3 +1,5 @@
+'use strict'
+
 // Mock environment variables for testing
 const originalEnv = process.env
 const originalIsTTY = process.stdout.isTTY

@@ -1,3 +1,5 @@
+'use strict'
+
 const ExpiredDomainsMarshall = require('../lib/marshalls/expiredDomains.marshall')
 
 const testMarshall = new ExpiredDomainsMarshall({

@@ -1,11 +1,11 @@
-const packageManager = require('../lib/packageManager')
+'use strict'
 
+const packageManager = require('../lib/packageManager')
 const childProcess = require('child_process')
 
 jest.mock('child_process', () => {
   return {
-    // eslint-disable-next-line no-unused-vars
-    spawn: jest.fn((cmd, args, options) => {
+    spawn: jest.fn(() => {
       return true
     })
   }

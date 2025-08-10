@@ -1,5 +1,7 @@
 // __tests__/env-var-integration.test.js
 
+'use strict'
+
 describe('NPQ_PKG_MGR Environment Variable Integration', () => {
   let originalArgv
   let originalNPQ_PKG_MGR

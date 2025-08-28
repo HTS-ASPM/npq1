@@ -408,4 +408,34 @@ describe('cliPrompt', () => {
       expect(result).toEqual({ undefined: true })
     }, 10000) // 10 second timeout
   })
+
+  describe('error handling', () => {
+    test('should handle ABORT_ERR gracefully when user presses Ctrl+C', async () => {
+      // Simulate the ABORT_ERR that readline throws on Ctrl+C
+      const abortError = new Error('The operation was aborted')
+      abortError.code = 'ABORT_ERR'
+      mockRl.question.mockRejectedValue(abortError)
+
+      try {
+        await prompt({ name: 'test', message: 'Test prompt?' })
+        expect(true).toBe(false) // Should not reach this line
+      } catch (error) {
+        expect(error.message).toBe('Operation aborted by user')
+        expect(error.code).toBe('USER_ABORT')
+        expect(error.exitCode).toBe(1)
+      }
+
+      // No longer expecting console.log since message handling moved to CLI layer
+    })
+
+    test('should re-throw non-ABORT_ERR errors', async () => {
+      const otherError = new Error('Some other error')
+      otherError.code = 'OTHER_ERROR'
+      mockRl.question.mockRejectedValue(otherError)
+
+      await expect(prompt({ name: 'test', message: 'Test prompt?' })).rejects.toThrow(
+        'Some other error'
+      )
+    })
+  })
 })

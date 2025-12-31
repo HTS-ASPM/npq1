@@ -1,7 +1,7 @@
 {
   "name": "npq",
   "version": "0.0.0-development",
-  "description": "marshall your npm/npm package installs with high quality and class 🎖",
+  "description": "marshall your npm/npm package installs with high quality and class \ud83c\udf96",
   "bin": {
     "npq": "./bin/npq.js",
     "npq-hero": "./bin/npq-hero.js"
@@ -101,5 +101,8 @@
         }
       ]
     }
+  },
+  "overrides": {
+    "glob": ">=11.1.0"
   }
 }
